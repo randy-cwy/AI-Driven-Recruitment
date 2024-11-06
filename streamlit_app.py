@@ -27,23 +27,19 @@ if "authenticated" not in st.session_state:
     st.header("AI Champions Project Type A 🚀")
     st.markdown("""
         #### Accelerating Recruitment through AI-Driven Skills Matching - *An LLM Application*
-        #### Key Features
-        - 🔍 **Automated Skill Matching**: Match job responsibilities with relevant candidate skills.
-        - 📊 **Candidate Scoring**: Rank candidates based on key criteria and proficiency levels.
-        - 📝 **Assessment Generation**: Generate customized assessments and answer keys.
+        Streamline hiring with our AI-driven recruitment tool! Match job responsibilities to candidate skills, rank top talent with precision, and generate customized assessments—all in one seamless platform. Discover how AI can transform your recruitment process!
         """)
     st.divider()
 
-# Function to check password
-if not check_password():
-    st.session_state["authenticated"] = True  # Store the authentication status
-    st.stop()
-
-# Custom CSS having issues with navbar, so I decided to remove custom button css.
+if not st.session_state.get("authenticated", False):  
+    if check_password():
+        st.session_state["authenticated"] = True 
+        st.rerun() 
+    else:
+        st.stop() 
 
 # endregion <--------- Streamlit Page Configuration --------->
 
-# Page Selector with st.selectbox
 pages = ["Home", "Sample Files", "About", "Methodology"]
 
 styles = {
