@@ -7,10 +7,8 @@ Welcome to the **LLM-Powered Job Description Parsing and Candidate Scoring App**
 - [✨ Features](#-features)
 - [🔄 Data Flow & Methodology](#-data-flow--methodology)
 - [🛠 Design Considerations](#-design-considerations)
-- [💻 Installation](#-installation)
 - [🚀 Usage](#-usage)
 - [🌱 Future Improvements](#-future-improvements)
-- [🙏 Acknowledgments](#-acknowledgments)
 
 ## 📚 Project Overview
 This app supports HR teams by automating aspects of the candidate evaluation process. It takes a job description and bulk-uploaded candidate resumes, extracts relevant skills, scores candidates based on proficiency and job relevance, and generates custom assessments for top candidates. The goal is to make candidate evaluation efficient and reduce manual effort.
@@ -60,7 +58,6 @@ This app supports HR teams by automating aspects of the candidate evaluation pro
    - **Step 1**: Upload the job description, SkillsFuture Framework file, and candidate resumes.
    - **Step 2**: Select the number of top candidates you’d like to display.
    - **Step 3**: Generate assessment files for the chosen candidates, and download them as a ZIP package with a single click.
-
 
 ## 🌱 Future Improvements
 - **🔗 Database Integration**: Enable direct data retrieval from external databases or job portals.
