@@ -41,7 +41,7 @@ def download():
         <li><b>Alice Tan Thia Koon: </b>Software Engineer</li>
         <li><b>Yunlong Jiao: </b>Machine Learning Engineer</li>
         <li><b>Caleb Tan Jun Jie: </b>Marketing Resume</li>
-        <li><b>Peter Barker: </b>Accountant</li>
+        <li><b>Montgomery Thompson: </b>Accountant</li>
     </ul>
     """, unsafe_allow_html=True)
 
