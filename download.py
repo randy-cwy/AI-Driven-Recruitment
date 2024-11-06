@@ -13,13 +13,13 @@ def download():
     st.header("Download Sample Files Here")
     st.write("Or feel free to use your own 😉")
     st.divider()
-    st.subheader("Sample Software Engineering JD")
+    st.subheader("Sample Software Engineering Internship Job Description")
     with open(sample_jd, "rb") as file:
         docx_bytes = file.read()
         st.download_button(
             label="Download Sample JD Doc",
             data=docx_bytes,
-            file_name="your_file.docx",
+            file_name="Sample_JD.docx",
             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         )
     st.divider()

@@ -19,7 +19,7 @@ from helper.assessment_generator import generate_assessment_with_answers, create
 st.set_page_config(
     layout="centered", 
     page_title="AI-Driven Skills Matching",
-    page_icon="mydocs/artificial-intelligence.png",
+    page_icon="mydocs/ai.png",
     initial_sidebar_state="collapsed"
 )
 

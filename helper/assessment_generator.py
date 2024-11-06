@@ -14,7 +14,7 @@ def generate_assessment_with_answers(jd_matched_skills):
         list: List of dictionaries, each containing a question, answer, and skill.
     """
     prompt = f"""
-    Based on the following skills required for the job, create an assessment with 5 questions in JSON format. 
+    Based on the following skills required for the job, create an assessment with questions in JSON format. 
     Each question should assess the candidate's ability in each skill. Provide a brief answer for each question as part of an answer key, 
     and include the skill being assessed for each question.
 
