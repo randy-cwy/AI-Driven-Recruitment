@@ -60,11 +60,12 @@ styles = {
         "margin": "0 0.125rem",
         "padding": "10.4375rem 0.625rem",
         "font-family": "'Inter', sans-serif",
+        "font-weight": "300",
     },
     "active": {
         "background-color": "#FEA20A",  # CCCS gold color for active item
         "color": "#004B87",  # Blue text on active
-        "font-weight": "bold",
+        "font-weight": "600",
         "box-shadow": "inset 0px 0px 5px rgba(0, 0, 0, 0.2)",
     },
     "hover": {
