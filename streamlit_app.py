@@ -4,7 +4,6 @@ import pandas as pd
 import json
 import zipfile
 import io
-from stqdm import stqdm
 from about import about_page
 from methodology import methodology_page
 from download import download
