@@ -24,36 +24,6 @@ if not check_password():
     st.stop()
 
 # Custom CSS having issues with navbar, so I decided to remove custom button css.
-# st.markdown("""
-#     <style>
-#     /* Button styles */
-#     .stButton > button, .stDownloadButton > button {
-#         padding: 10px 15px;
-#         font-size: 1em;
-#         background-color: #004B87;
-#         color: white;
-#         border-radius: 5px;
-#         border: none;
-#         cursor: pointer;
-#     }
-#     .stButton > button:hover, .stDownloadButton > button:hover {
-#         background-color: #0072CE;
-#     }
-
-#     /* Expander styling */
-#     .stExpander .stExpanderHeader {
-#         font-weight: bold;
-#         color: #004B87;
-#         background-color: #e3eaf2;
-#         padding: 10px;
-#         border-radius: 5px;
-#     }
-#     .stExpander .stExpanderContent {
-#         padding: 10px;
-#         background-color: #f2f5f9;
-#     }
-#     </style>
-# """, unsafe_allow_html=True)
 
 # endregion <--------- Streamlit Page Configuration --------->
 

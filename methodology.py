@@ -101,7 +101,7 @@ def methodology_page():
                 <li><b>Normalization of Scores:</b> Each candidate's total score is normalized to a 0-100 scale, ensuring consistent comparison across candidates regardless of specific skill requirements or job weights.</li>
                 <li><b>Final Ranking:</b> Candidates are ranked by their normalized scores, with the highest-scoring candidates displayed at the top. This ranking enables hiring managers to quickly identify the best-qualified candidates for the job role.</li>
             </ul>
-        <li><b>Step 5: Candidate Filtering, found in <code>main.py</code>:</b> After scoring, candidates are ranked based on their total scores, allowing the user to specify the number of top candidates to display.
+        <li><b>Step 5: Candidate Filtering, found in <code>streamlit_app.py</code>:</b> After scoring, candidates are ranked based on their total scores, allowing the user to specify the number of top candidates to display.
             <ul>
                 <li><b>Filtering Top X Candidates:</b> The user can input the desired number of top candidates (e.g., top 5 or top 10). The system filters the highest-ranking candidates based on their final scores, ensuring that only the most suitable candidates are highlighted.</li>
                 <li><b>Dynamic Selection:</b> This filtering is dynamically adjustable, so users can modify the number of top candidates displayed without recalculating scores, as the candidate rankings are saved for easy access and sorting.</li>
