@@ -1,0 +1,86 @@
+{
+    "John Doe": {
+        "Name": "John Doe",
+        "Qualification": "Bachelor of Science in Marketing",
+        "Skills": [
+            {
+                "Skill": "Digital Campaigns",
+                "Category": "Marketing",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Led end-to-end digital marketing campaigns that increased lead generation by 35% through optimized ad targeting and content marketing."
+            },
+            {
+                "Skill": "Content Marketing",
+                "Category": "Marketing",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Developed and implemented SEO strategies that boosted organic website traffic by 20% within one year."
+            },
+            {
+                "Skill": "Social Media Management",
+                "Category": "Marketing",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Coordinated digital advertising campaigns on social media platforms (Facebook, Instagram, LinkedIn), achieving a 25% increase in audience engagement."
+            },
+            {
+                "Skill": "Data Analysis",
+                "Category": "Data Science",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Leveraging data analytics and market research to guide decisions and improve campaign performance."
+            },
+            {
+                "Skill": "Project Management",
+                "Category": "Management",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Managed a $100K+ digital marketing budget, consistently achieving or exceeding ROI targets."
+            },
+            {
+                "Skill": "Market Research & Analysis",
+                "Category": "Data Science",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Conducted market research and competitor analysis to identify customer needs, informing marketing strategies and product positioning."
+            }
+        ]
+    },
+    "Randy Chan": {
+        "Name": "Randy Chan",
+        "Qualification": "Diploma in Business Information Systems, Specializing in Business Analytics",
+        "Skills": [
+            {
+                "Skill": "Data Analysis",
+                "Category": "Data Science",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Develop Python scripts to derive meaningful insights from structured data."
+            },
+            {
+                "Skill": "Machine Learning",
+                "Category": "Data Science",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Apply machine learning techniques to structured data to derive insights."
+            },
+            {
+                "Skill": "Python Programming",
+                "Category": "Programming",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Develop Python scripts to derive meaningful insights from structured data."
+            },
+            {
+                "Skill": "SQL Database Management",
+                "Category": "Database Management",
+                "Proficiency Level": "Basic",
+                "Explanation": "Process data, which includes cleaning and organising datasets for storage into relational database(s)."
+            },
+            {
+                "Skill": "Statistical Analysis",
+                "Category": "Data Science",
+                "Proficiency Level": "Intermediate",
+                "Explanation": "Performed sentiment analysis using Naive Bayes, a lexicon-based model, and VADER to understand users' sentiment."
+            },
+            {
+                "Skill": "Project Management",
+                "Category": "Management",
+                "Proficiency Level": "Basic",
+                "Explanation": "Prepare system documentation (i.e. Technical Documentation and Guides)."
+            }
+        ]
+    }
+}
