@@ -114,11 +114,23 @@ elif page == "Home":
                 st.session_state["jd_matched_skills"] = jd_matched_skills
 
                 # Process resumes with progress bar
+                progress_bar = st.progress(0)
+                total_files = len(resume_files)
+
                 candidate_results = {}
-                for resume_file in stqdm(resume_files, desc="Processing Resumes"):
+
+                # Process resumes with progress bar
+                for index, resume_file in enumerate(resume_files):
+                    # Process each resume
                     result = process_bulk_resumes([resume_file], framework_df)
                     candidate_results.update(result)
-                
+                    
+                    # Update progress bar
+                    progress_bar.progress((index + 1) / total_files)
+
+                # Clear the progress bar once done
+                progress_bar.empty()
+                                
                 # Store candidate results in session state
                 st.session_state["candidate_results"] = candidate_results  # <-- Store results here
 
@@ -186,9 +198,18 @@ elif page == "Home":
                 with st.spinner("Generating assessment documents..."):
                     assessment_data = generate_assessment_with_answers(st.session_state["jd_matched_skills"])
                     
-                    # Generate candidate documents and answer key with stqdm for progress bar
-                    for candidate_name in stqdm(candidate_names, desc="Generating Assessment Documents"):
+                    # Progress bar for generating assessment documents
+                    assessment_progress_bar = st.progress(0)
+                    total_candidates = len(candidate_names)
+
+                    for index, candidate_name in enumerate(candidate_names):
                         create_candidate_docs([candidate_name], assessment_data)
+                        
+                        # Update progress bar
+                        assessment_progress_bar.progress((index + 1) / total_candidates)
+
+                    # Clear the progress bar once done
+                    assessment_progress_bar.empty()
 
                     create_answer_key_doc(assessment_data)
                     
