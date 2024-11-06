@@ -18,8 +18,20 @@ from helper.assessment_generator import generate_assessment_with_answers, create
 
 st.set_page_config(layout="centered", page_title="Candidate Scoring App", initial_sidebar_state="collapsed")
 
-# Do not continue if check_password is not True.  
+if "authenticated" not in st.session_state:
+    st.header("AI Champions Project Type A 🚀")
+    st.markdown("""
+        #### Accelerating Recruitment through AI-Driven Skills Matching - *An LLM Application*
+        #### Key Features
+        - 🔍 **Automated Skill Matching**: Match job responsibilities with relevant candidate skills.
+        - 📊 **Candidate Scoring**: Rank candidates based on key criteria and proficiency levels.
+        - 📝 **Assessment Generation**: Generate customized assessments and answer keys.
+        """)
+    st.divider()
+
+# Function to check password
 if not check_password():
+    st.session_state["authenticated"] = True  # Store the authentication status
     st.stop()
 
 # Custom CSS having issues with navbar, so I decided to remove custom button css.
