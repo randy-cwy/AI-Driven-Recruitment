@@ -16,7 +16,12 @@ from helper.assessment_generator import generate_assessment_with_answers, create
   
 # region <--------- Streamlit Page Configuration --------->
 
-st.set_page_config(layout="centered", page_title="Candidate Scoring App", initial_sidebar_state="collapsed")
+st.set_page_config(
+    layout="centered", 
+    page_title="AI-Driven Skills Matching",
+    page_icon="mydocs/artificial-intelligence.png",
+    initial_sidebar_state="collapsed"
+)
 
 if "authenticated" not in st.session_state:
     st.header("AI Champions Project Type A 🚀")
