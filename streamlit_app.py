@@ -49,21 +49,28 @@ pages = ["Home", "Sample Files", "About", "Methodology"]
 styles = {
     "nav": {
         "background-color": "#004B87",
+        "font-family": "'Inter', sans-serif",
     },
     "div": {
         "max-width": "32rem",
     },
     "span": {
-        "border-radius": "0.5rem",
+        "border-radius": "0rem",
         "color": "#FFFFFF",
         "margin": "0 0.125rem",
-        "padding": "0.4375rem 0.625rem",
+        "padding": "10.4375rem 0.625rem",
+        "font-family": "'Inter', sans-serif",
     },
     "active": {
-        "background-color": "rgba(255, 255, 255, 0.25)",
+        "background-color": "#FEA20A",  # CCCS gold color for active item
+        "color": "#004B87",  # Blue text on active
+        "font-weight": "bold",
+        "box-shadow": "inset 0px 0px 5px rgba(0, 0, 0, 0.2)",
     },
     "hover": {
-        "background-color": "rgba(255, 255, 255, 0.35)",
+        "background-color": "#FEA20A",  # CCCS gold color for hover
+        "color": "#004B87",  # Blue text on hover
+        "transition": "background-color 0.3s ease, color 0.3s ease",  
     },
 }
 
