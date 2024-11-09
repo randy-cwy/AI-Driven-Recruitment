@@ -124,7 +124,7 @@ elif page == "Home":
             st.session_state.pop("candidate_results", None)  # Clear old candidate_results
 
             # Process Job Description and Skills Framework
-            with st.spinner("Loading..."):
+            with st.spinner("🤖 Loading..."):
                 jd_text, _ = process_job_description_file(jd_file)
                 framework_df = load_skills_future_framework(framework_file)
                 jd_matched_skills = llm_assisted_skill_matching(jd_text, framework_df)
@@ -133,7 +133,8 @@ elif page == "Home":
                 jd_matched_skills = remove_duplicate_skills(json.loads(jd_matched_skills))
                 st.session_state["jd_matched_skills"] = jd_matched_skills
 
-                # Process resumes with progress bar
+                # Process resumes with progress bar and additional details
+                status_text = st.empty()
                 progress_bar = st.progress(0)
                 total_files = len(resume_files)
 
@@ -141,16 +142,23 @@ elif page == "Home":
 
                 # Process resumes with progress bar
                 for index, resume_file in enumerate(resume_files):
+                    # Show the current progress with file details
+                    current_file = resume_file.name
+                    status_text.markdown(f"**Processing file {index + 1}/{total_files}: `{current_file}`**")
+                    
                     # Process each resume
                     result = process_bulk_resumes([resume_file], framework_df)
                     candidate_results.update(result)
                     
-                    # Update progress bar
-                    progress_bar.progress((index + 1) / total_files)
+                    # Update progress bar and display percentage
+                    progress_percentage = (index + 1) / total_files
+                    status_text.markdown(f"**Progress: {int(progress_percentage * 100)}% completed**")
+                    progress_bar.progress(progress_percentage)
 
-                # Clear the progress bar once done
+                # Clear the progress bar and status message once done
                 progress_bar.empty()
-                                
+                status_text.empty()
+
                 # Store candidate results in session state
                 st.session_state["candidate_results"] = candidate_results  # <-- Store results here
 
@@ -186,7 +194,7 @@ elif page == "Home":
                     st.write(f"**Qualification**: {qualification}")
                     
                     # Display matched skills and their proficiency levels
-                    st.write("**Matched Skills:**")
+                    st.write("**Current Skillset:**")
                     skills = candidate_info.get("Skills", [])
                     if skills:
                         for skill in skills:
@@ -215,21 +223,27 @@ elif page == "Home":
                 candidate_names = top_candidates["Candidate"].tolist()
                 
                 # Generate assessment with progress bar
-                with st.spinner("Generating assessment documents..."):
+                with st.spinner("✍️ Generating assessment documents..."):
                     assessment_data = generate_assessment_with_answers(st.session_state["jd_matched_skills"])
-                    
-                    # Progress bar for generating assessment documents
+
+                    # Progress bar and status text for generating assessment documents
+                    assessment_status_text = st.empty()
                     assessment_progress_bar = st.progress(0)
                     total_candidates = len(candidate_names)
 
                     for index, candidate_name in enumerate(candidate_names):
+                        # Update status text with the current progress
+                        assessment_status_text.text(f"Generating assessment for {candidate_name} ({index + 1}/{total_candidates})")
+                        
+                        # Create assessment document for the current candidate
                         create_candidate_docs([candidate_name], assessment_data)
                         
                         # Update progress bar
                         assessment_progress_bar.progress((index + 1) / total_candidates)
 
-                    # Clear the progress bar once done
+                    # Clear the progress bar and status text once done
                     assessment_progress_bar.empty()
+                    assessment_status_text.empty()
 
                     create_answer_key_doc(assessment_data)
                     
