@@ -23,7 +23,7 @@ def about_page():
 
     # Page Content
     st.title("About This Project")
-    st.markdown('<div class="about-header">Project Scope</div>', unsafe_allow_html=True)
+    st.markdown('<div class="about-header"><b>Project Scope</b></div>', unsafe_allow_html=True)
     st.markdown('<p class="about-paragraph">This project is an AI-powered job description parsing and candidate scoring application. It leverages large language models (LLMs) to match job responsibilities with relevant skills, assess candidates based on their resumes, and generate customized assessments.</p>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
