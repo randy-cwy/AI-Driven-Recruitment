@@ -1,4 +1,0 @@
-libmupdf-dev
-libmupdf-tools
-libopenjp2-7
-libjpeg62-turbo-dev

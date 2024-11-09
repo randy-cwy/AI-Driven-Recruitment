@@ -1,4 +1,4 @@
-import fitz  # PyMuPDF for PDF processing
+import PyPDF2
 from docx import Document  # python-docx for .docx processing
 from helper.llm import get_completion
 import json
@@ -18,11 +18,17 @@ def extract_text_from_file(file):
         doc = Document(file)
         return '\n'.join([para.text for para in doc.paragraphs])
     elif file.name.endswith('.pdf'):
-        # Read .pdf file
+        # Read .pdf file using PyPDF2
         pdf_text = ""
-        pdf = fitz.open(stream=file.read(), filetype="pdf")  # open as binary stream
-        for page_num in range(pdf.page_count):
-            pdf_text += pdf[page_num].get_text()
+        pdf_reader = PyPDF2.PdfReader(file)  # Use PyPDF2 to read the PDF
+
+        # Loop through all the pages and extract text
+        for page in pdf_reader.pages:
+            text = page.extract_text()
+            if text:
+                pdf_text += text
+
+        # Return or use the extracted text as needed
         return pdf_text
     else:
         raise ValueError("Unsupported file format")
